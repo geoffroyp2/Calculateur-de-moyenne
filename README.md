@@ -1,1 +1,1 @@
-# Calculateur-de-moyenne
+# Calculateur de moyenne pour François :)

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import data from './data.json';
+import './App.css';
 
 /* Organisation des composants :
     le document data.json contient toutes les infos de filières, matières, etc...
@@ -18,6 +19,7 @@ import data from './data.json';
 
 
     TODO :
+      - Se moquer de Geoffroy qui sait pas coder
       - Remplir les autres filières
       - Vérifier (et rajouter) s'il existe des cas particulier auxquels j'ai pas pensé
       - Rendre les input-fields et listes déroulantes plus jolies/utilisables (par exemple changer les zones de texte en input de nombres entre 0 et 20)

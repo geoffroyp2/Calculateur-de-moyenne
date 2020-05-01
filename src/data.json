@@ -1,5 +1,5 @@
 {
-    "mat": {
+    "matieres": {
         "SVT": "Sciences de la vie et de la terre",
         "SI": "Sciences de l'ingénieur",
         "EAT": "Ecologie, agronomie et territoires",
@@ -37,225 +37,227 @@
             "Théâtre"
         ]
     },
-    "0": {
-        "fil": "bac S",
-        "obl": [
-            "SVT",
-            "SI",
-            "EAT"
-        ],
-        "spe": [
-            "PC",
-            "MATH",
-            "INFO"
-        ],
-        "mat": [
-            {
-                "id": "FR-E",
-                "type": "écrit",
-                "coef": 2,
-                "an": "PREM",
-                "bonus": false
-            },
-            {
-                "id": "FR-O",
-                "type": "oral",
-                "coef": 2,
-                "an": "PREM",
-                "bonus": false
-            },
-            {
-                "id": "TPE",
-                "type": "oral",
-                "coef": 2,
-                "an": "PREM",
-                "bonus": true
-            },
-            {
-                "id": "PHI",
-                "type": "écrit",
-                "coef": 3,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "HG",
-                "type": "écrit",
-                "coef": 3,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "LV1",
-                "type": "écrit et oral",
-                "coef": 3,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "LV2",
-                "type": "écrit et oral",
-                "coef": 2,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "MATH",
-                "type": "écrit",
-                "coef": 7,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "PC",
-                "type": "écrit et pratique",
-                "coef": 6,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "SVT",
-                "type": "écrit et pratique",
-                "coef": 6,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "SI",
-                "type": "écrit et oral",
-                "coef": 6,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "EAT",
-                "type": "écrit et oral",
-                "coef": 7,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "INFO",
-                "type": "oral",
-                "coef": 0,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "EPS",
-                "type": "contrôle continu",
-                "coef": 2,
-                "an": "TERM",
-                "bonus": false
-            },
-            {
-                "id": "OPS",
-                "nom": "Option n°1",
-                "coef": 2,
-                "an": "OPT",
-                "bonus": true
-            },
-            {
-                "id": "OPS",
-                "nom": "Option n°2",
-                "coef": 1,
-                "an": "OPT",
-                "bonus": true
-            }
-        ]
-    },
-    "1": {
-        "fil": "bac ES",
-        "obl": [],
-        "spe": [],
-        "mat": [
-            {
-                "id": "OPS",
-                "nom": "Option n°2",
-                "coef": 1,
-                "an": "OPT",
-                "bonus": true
-            }
-        ]
-    },
-    "2": {
-        "fil": "bac L",
-        "obl": [
-            "a",
-            "b"
-        ],
-        "spe": [
-            "a",
-            "b"
-        ],
-        "mat": [
-            {
-                "id": "OPS",
-                "nom": "Option n°2",
-                "coef": 1,
-                "an": "OPT",
-                "bonus": true
-            }
-        ]
-    },
-    "3": {
-        "fil": "bac STMG",
-        "obl": [
-            "a",
-            "b"
-        ],
-        "spe": [
-            "a",
-            "b"
-        ],
-        "mat": [
-            {
-                "id": "OPS",
-                "nom": "Option n°2",
-                "coef": 1,
-                "an": "OPT",
-                "bonus": true
-            }
-        ]
-    },
-    "4": {
-        "fil": "bac ST2D",
-        "obl": [
-            "a",
-            "b"
-        ],
-        "spe": [
-            "a",
-            "b"
-        ],
-        "mat": [
-            {
-                "id": "OPS",
-                "nom": "Option n°2",
-                "coef": 1,
-                "an": "OPT",
-                "bonus": true
-            }
-        ]
-    },
-    "5": {
-        "fil": "bac ST2S",
-        "obl": [
-            "a",
-            "b"
-        ],
-        "spe": [
-            "a",
-            "b"
-        ],
-        "mat": [
-            {
-                "id": "OPS",
-                "nom": "Option n°2",
-                "coef": 1,
-                "an": "OPT",
-                "bonus": true
-            }
-        ]
-    }
+    "filieres": [
+        {
+            "nom": "bac S",
+            "obl": [
+                "SVT",
+                "SI",
+                "EAT"
+            ],
+            "spe": [
+                "PC",
+                "MATH",
+                "INFO"
+            ],
+            "mat": [
+                {
+                    "id": "FR-E",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": false
+                },
+                {
+                    "id": "FR-O",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": false
+                },
+                {
+                    "id": "TPE",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": true
+                },
+                {
+                    "id": "PHI",
+                    "type": "écrit",
+                    "coef": 3,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "HG",
+                    "type": "écrit",
+                    "coef": 3,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "LV1",
+                    "type": "écrit et oral",
+                    "coef": 3,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "LV2",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "MATH",
+                    "type": "écrit",
+                    "coef": 7,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "PC",
+                    "type": "écrit et pratique",
+                    "coef": 6,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "SVT",
+                    "type": "écrit et pratique",
+                    "coef": 6,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "SI",
+                    "type": "écrit et oral",
+                    "coef": 6,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "EAT",
+                    "type": "écrit et oral",
+                    "coef": 7,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "INFO",
+                    "type": "oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "EPS",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "OPS",
+                    "nom": "Option n°1",
+                    "coef": 2,
+                    "an": "OPT",
+                    "bonus": true
+                },
+                {
+                    "id": "OPS",
+                    "nom": "Option n°2",
+                    "coef": 1,
+                    "an": "OPT",
+                    "bonus": true
+                }
+            ]
+        },
+        {
+            "nom": "bac ES",
+            "obl": [],
+            "spe": [],
+            "mat": [
+                {
+                    "id": "OPS",
+                    "nom": "Option n°2",
+                    "coef": 1,
+                    "an": "OPT",
+                    "bonus": true
+                }
+            ]
+        },
+        {
+            "nom": "bac L",
+            "obl": [
+                "a",
+                "b"
+            ],
+            "spe": [
+                "a",
+                "b"
+            ],
+            "mat": [
+                {
+                    "id": "OPS",
+                    "nom": "Option n°2",
+                    "coef": 1,
+                    "an": "OPT",
+                    "bonus": true
+                }
+            ]
+        },
+        {
+            "nom": "bac STMG",
+            "obl": [
+                "a",
+                "b"
+            ],
+            "spe": [
+                "a",
+                "b"
+            ],
+            "mat": [
+                {
+                    "id": "OPS",
+                    "nom": "Option n°2",
+                    "coef": 1,
+                    "an": "OPT",
+                    "bonus": true
+                }
+            ]
+        },
+        {
+            "nom": "bac ST2D",
+            "obl": [
+                "a",
+                "b"
+            ],
+            "spe": [
+                "a",
+                "b"
+            ],
+            "mat": [
+                {
+                    "id": "OPS",
+                    "nom": "Option n°2",
+                    "coef": 1,
+                    "an": "OPT",
+                    "bonus": true
+                }
+            ]
+        },
+        {
+            "nom": "bac ST2S",
+            "obl": [
+                "a",
+                "b"
+            ],
+            "spe": [
+                "a",
+                "b"
+            ],
+            "mat": [
+                {
+                    "id": "OPS",
+                    "nom": "Option n°2",
+                    "coef": 1,
+                    "an": "OPT",
+                    "bonus": true
+                }
+            ]
+        }
+    ]
 }

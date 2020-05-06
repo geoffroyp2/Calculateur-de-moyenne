@@ -150,14 +150,14 @@
                     "bonus": false
                 },
                 {
-                    "id": "OPS",
+                    "id": "OPS1",
                     "nom": "Option n°1",
                     "coef": 2,
                     "an": "OPT",
                     "bonus": true
                 },
                 {
-                    "id": "OPS",
+                    "id": "OPS2",
                     "nom": "Option n°2",
                     "coef": 1,
                     "an": "OPT",

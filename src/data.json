@@ -21,21 +21,8 @@
         "SCI": "Sciences",
         "ECO": "Economie approfondie",
         "SSP": "Sciences sociales et politiques",
-        "OPS": [
-            "Arts plastiques",
-            "Cinéma-audivisuel",
-            "Danse",
-            "EPS",
-            "Grec",
-            "Hippologie et Equitation",
-            "Histoire des arts",
-            "Langue des signes",
-            "Langue vivante 3",
-            "Latin",
-            "Musique",
-            "Pratiques sociales et culturelles",
-            "Théâtre"
-        ]
+        "OPT1": "Option n°1",
+        "OPT2": "Option n°2"
     },
     "filieres": [
         {
@@ -150,19 +137,34 @@
                     "bonus": false
                 },
                 {
-                    "id": "OPS1",
-                    "nom": "Option n°1",
+                    "id": "OPT1",
+                    "type": "",
                     "coef": 2,
                     "an": "OPT",
                     "bonus": true
                 },
                 {
-                    "id": "OPS2",
-                    "nom": "Option n°2",
+                    "id": "OPT2",
+                    "type": "",
                     "coef": 1,
                     "an": "OPT",
                     "bonus": true
                 }
+            ],
+            "OPT": [
+                "Arts plastiques",
+                "Cinéma-audivisuel",
+                "Danse",
+                "EPS",
+                "Grec",
+                "Hippologie et Equitation",
+                "Histoire des arts",
+                "Langue des signes",
+                "Langue vivante 3",
+                "Latin",
+                "Musique",
+                "Pratiques sociales et culturelles",
+                "Théâtre"
             ]
         },
         {
@@ -171,93 +173,102 @@
             "spe": [],
             "mat": [
                 {
-                    "id": "OPS",
-                    "nom": "Option n°2",
-                    "coef": 1,
+                    "id": "FR-E",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": false
+                },
+                {
+                    "id": "FR-O",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": false
+                },
+                {
+                    "id": "TPE",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": true
+                },
+                {
+                    "id": "PHI",
+                    "type": "écrit",
+                    "coef": 3,
+                    "an": "TERM",
+                    "bonus": false
+                },
+                {
+                    "id": "OPT1",
+                    "type": "",
+                    "coef": 2,
                     "an": "OPT",
                     "bonus": true
                 }
-            ]
+            ],
+            "OPT": []
         },
         {
             "nom": "bac L",
-            "obl": [
-                "a",
-                "b"
-            ],
-            "spe": [
-                "a",
-                "b"
-            ],
+            "obl": [],
+            "spe": [],
             "mat": [
                 {
-                    "id": "OPS",
-                    "nom": "Option n°2",
-                    "coef": 1,
-                    "an": "OPT",
-                    "bonus": true
+                    "id": "FR-E",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": false
                 }
-            ]
+            ],
+            "OPT": []
         },
         {
             "nom": "bac STMG",
-            "obl": [
-                "a",
-                "b"
-            ],
-            "spe": [
-                "a",
-                "b"
-            ],
+            "obl": [],
+            "spe": [],
             "mat": [
                 {
-                    "id": "OPS",
-                    "nom": "Option n°2",
-                    "coef": 1,
-                    "an": "OPT",
-                    "bonus": true
+                    "id": "FR-E",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": false
                 }
-            ]
+            ],
+            "OPT": []
         },
         {
             "nom": "bac ST2D",
-            "obl": [
-                "a",
-                "b"
-            ],
-            "spe": [
-                "a",
-                "b"
-            ],
+            "obl": [],
+            "spe": [],
             "mat": [
                 {
-                    "id": "OPS",
-                    "nom": "Option n°2",
-                    "coef": 1,
-                    "an": "OPT",
-                    "bonus": true
+                    "id": "FR-E",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": false
                 }
-            ]
+            ],
+            "OPT": []
         },
         {
             "nom": "bac ST2S",
-            "obl": [
-                "a",
-                "b"
-            ],
-            "spe": [
-                "a",
-                "b"
-            ],
+            "obl": [],
+            "spe": [],
             "mat": [
                 {
-                    "id": "OPS",
-                    "nom": "Option n°2",
-                    "coef": 1,
-                    "an": "OPT",
-                    "bonus": true
+                    "id": "FR-E",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "bonus": false
                 }
-            ]
+            ],
+            "OPT": []
         }
     ]
 }

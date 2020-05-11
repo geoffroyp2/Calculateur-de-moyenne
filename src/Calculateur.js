@@ -3,14 +3,22 @@ import React, { useState, useCallback } from 'react';
 import Select from './Select';
 import data from './data.json';
 
-import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
+import Form from 'react-bootstrap/Form';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+import { BsInfoCircle } from 'react-icons/bs';
 
 /*
 A INSTALLER
 
 npm install react-bootstrap bootstrap
+npm install react-icons --save
 
 TODO:
+-- Bac TMD et STAV
+-- Latin et Grec coef 3 si choisi en option 1
+
 -- Pour que ce soit plus lisible, on pourrait couper le code en sous-classes (notamment dans le tableau des matières)
 -- Ajouter des infos pop-up pour expliquer le calcul des matières bonus
 -- Ajouter des infos pour les mentions
@@ -23,14 +31,16 @@ TODO:
 */
 
 const Calculateur = () => {
-    const { filieres, matieres } = data;
-    const [filiere, changeFiliere] = useState(filieres[0]);
-    const [obligatoire, changeObligatoire] = useState(filieres[0].obl[0]);
-    const [specialite, changeSpecialite] = useState(filieres[0].spe[0]);
-    const [option1, changeOption1] = useState(filieres[0].OPT[0]);
-    const [option2, changeOption2] = useState(filieres[0].OPT[1]);
+    const def = 0;
+    const { filieres, matieres, info } = data;
+    const [filiere, changeFiliere] = useState(filieres[def]);
+    const [obligatoire, changeObligatoire] = useState(() => { let x = filieres[def].mat.find(i => i.obl); return x ? x.id : null; });
+    const [specialite, changeSpecialite] = useState(() => { let x = filieres[def].mat.find(i => i.spe); return x ? x.id : null; });
+    const [option1, changeOption1] = useState(filieres[def].OPT[0]);
+    const [option2, changeOption2] = useState(filieres[def].OPT[1]);
     const [notes, changeNotes] = useState({});
     const [avg, changeAvg] = useState(0);
+    const [EPS, changeEPS] = useState(false);
 
     const onChangeFiliere = useCallback((evt) => {
         const newFiliere = filieres.filter((fil) => fil.nom === evt.target.value);
@@ -41,26 +51,32 @@ const Calculateur = () => {
 
         changeFiliere(newFiliere[0]);
 
-        // Pour tout reset quand on change de filliere (nécessaire pour l'affichage correct des select d'obligatoire/spé) 
-        // Faut peut être reset tous les autres states aussi pour pas polluer le calcul de la note finale
-        changeObligatoire(newFiliere[0].obl[0]);
-        changeSpecialite(newFiliere[0].spe[0]);
+        // Pour tout reset quand on change de filliere (pour pas avoir de valeur résiduelle) 
+        changeObligatoire(() => { let x = newFiliere[0].mat.find(i => i.obl); return x ? x.id : null; });
+        changeSpecialite(() => { let x = newFiliere[0].mat.find(i => i.spe); return x ? x.id : null; });
+        changeOption1(newFiliere[0].OPT[0]);
+        changeOption2(newFiliere[0].OPT[1]);
+        changeNotes({});
+        changeAvg(0);
+        changeEPS(false);
     }, [filieres]);
 
     const calculateMoyenne = () => {
         const moyenne = (
             filiere.mat.reduce((acc, mat) => {
-                const isObl = filiere.obl.includes(mat.id);
                 if (mat.bonus) { // Pour les matières bonus (TPE & Options)
                     return (notes[mat.id] || 0) <= 10 ? acc : acc + mat.coef * (notes[mat.id] - 10); //Seulement les notes au-dessus de 10
                 } else {
-                    return isObl && obligatoire !== mat.id ? acc : acc + mat.coef * (notes[mat.id] || 0); //Seulement la matière obligatoire choisie
+                    return mat.obl && (obligatoire !== mat.id) ? //ne compter que la matière obligatoire choisie
+                        acc :
+                        acc + (mat.coef + (mat.id === specialite ? mat.spebonus : 0)) * (notes[mat.id] || 0); // appliquer les coef bonus
                 }
             }, 0)
             /
             filiere.mat.reduce((acc, mat) => {
-                const isObl = filiere.obl.includes(mat.id);
-                return mat.bonus || (isObl && obligatoire !== mat.id) ? acc : acc + mat.coef; // les coefs des matières bonus ne s'ajoutent pas au total
+                return mat.bonus || (mat.obl && obligatoire !== mat.id) ? // ni les obligatoires non-choisies ni les bonus
+                    acc :
+                    acc + mat.coef + (mat.id === specialite ? mat.spebonus : 0); // coef + coef de spé si nécessaire
             }, 0)
         ).toFixed(2);
 
@@ -76,6 +92,10 @@ const Calculateur = () => {
         changeSpecialite(Object.entries(matieres).find(i => i[1] === evt.target.value)[0]);
         changeNotes({});
     }, [matieres]);
+
+    const onChangeEPS = useCallback((evt) => {
+        changeEPS(evt.target.checked);
+    }, []);
 
     const onChangeOption = useCallback((idx) => {
         // afin d'eviter que la personne selectionne deux fois la meme options.
@@ -114,9 +134,7 @@ const Calculateur = () => {
                         className="" //class name du Select
                         onChange={onChangeFiliere}
                         value={filiere.nom}
-                        values={filieres}
-                        optionKey="nom"
-                        optionLabel="nom"
+                        values={filieres.map(i => i.nom)}
                     />
                 </div>
                 {obligatoire ?
@@ -126,9 +144,10 @@ const Calculateur = () => {
                             className=""
                             onChange={onChangeObligatoire}
                             value={matieres[obligatoire]}
-                            values={filiere.obl.map(id => matieres[id])}
+                            values={filiere.mat.filter(i => i.obl).map(i => matieres[i.id])}
                         />
-                    </div> :
+                    </div>
+                    :
                     null
                 }
                 {specialite ?
@@ -138,9 +157,10 @@ const Calculateur = () => {
                             className=""
                             onChange={onChangeSpecialite}
                             value={matieres[specialite]}
-                            values={filiere.spe.concat([obligatoire]).map(id => matieres[id])} // Pour ajouter la matière obligatoire au choix de spé
+                            values={filiere.mat.filter(i => (i.spe && !i.obl) || (i.id === obligatoire)).map(i => matieres[i.id])}
                         />
-                    </div> :
+                    </div>
+                    :
                     null
                 }
             </div>
@@ -164,15 +184,31 @@ const Calculateur = () => {
                                 </thead>
                                 <tbody>
                                     {filiere.mat.filter((mat) => mat.an === ["PREM", "TERM", "OPT"][idx]).map((mat) => {
-                                        const coef = mat.id === specialite ? mat.coef + 2 : mat.coef;
-                                        const isObl = filiere.obl.includes(mat.id);
-                                        if (coef !== 0 && (!isObl || (isObl && obligatoire === mat.id))) {
+                                        let coef = mat.id === specialite ? mat.coef + mat.spebonus : mat.coef;
+                                        if (mat.id === "EPS" && EPS) coef += 2;
+                                        if (coef !== 0 && (!mat.obl || (mat.obl && obligatoire === mat.id))) {
                                             return (
                                                 <tr key={mat.id}>
                                                     <td className={`pb-0 pt-1`}>
-                                                        <span className={`float-left pl-1 pr-1`}>{matieres[mat.id]}</span>
+                                                        {filiere.nom === "Bac STL" && mat.spe ? //Petit cas relou
+                                                            <span className={`float-left pl-1 pr-1`}>{"Chimie, biochimie, sciences du vivant et " + matieres[mat.id]}</span>
+                                                            :
+                                                            <span className={`float-left pl-1 pr-1`}>{matieres[mat.id]}</span>
+                                                        }
                                                         {idx < 2 ?
-                                                            <span className={`float-right text-muted pl-1 pr-2`}>{mat.type}</span> :
+                                                            <span className={`float-right text-muted pl-1 pr-2`}>
+                                                                {mat.info ?
+                                                                    <OverlayTrigger
+                                                                        placement={`left`}
+                                                                        overlay={<Tooltip id={`${mat.id}info`}>{info[mat.info]}</Tooltip>}
+                                                                    >
+                                                                        <BsInfoCircle className={`pr-1`} />
+                                                                    </OverlayTrigger>
+                                                                    : null
+                                                                }
+                                                                {mat.type}
+                                                            </span>
+                                                            :
                                                             <span className={`pl-1`}>
                                                                 <Select
                                                                     className="options"
@@ -180,7 +216,30 @@ const Calculateur = () => {
                                                                     value={mat.id[3] === '1' ? option1 : option2}
                                                                     values={filiere.OPT}
                                                                 />
+                                                                {mat.info ?
+                                                                    <span className={`float-right text-muted pl-1 pr-2`}>
+                                                                        <OverlayTrigger
+                                                                            placement={`left`}
+                                                                            overlay={<Tooltip id={`${mat.id}info`}>{info[mat.info]}</Tooltip>}
+                                                                        >
+                                                                            <BsInfoCircle className={`pr-1`} />
+                                                                        </OverlayTrigger>
+                                                                    </span>
+                                                                    : null
+                                                                }
                                                             </span>
+                                                        }
+                                                        {mat.id === 'EPS' ?
+                                                            <div className={`pt-2 pl-2`}><p />
+                                                                <Form.Check
+                                                                    type="switch"
+                                                                    id={`EPS-switch`}
+                                                                    label={`EPS de complément`}
+                                                                    onChange={onChangeEPS}
+                                                                    checked={EPS}
+                                                                /></div>
+                                                            :
+                                                            null
                                                         }
                                                     </td>
                                                     <td className={`pb-0 pt-1`}>
@@ -208,7 +267,7 @@ const Calculateur = () => {
                 <div className={`alert ${avg > 10 ? `alert-success` : `alert-danger`} p-2`}>
                     <span className={`pr-3`}> Moyenne :</span>
                     <span>{avg} / 20</span>
-                    <div>Plus d'infos <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">ici</a></div>
+                    <div>Plus d'infos <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" rel="noopener noreferrer" target="_blank">ici</a></div>
                 </div>
             </div>
         </div >

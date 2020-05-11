@@ -10,39 +10,77 @@
         "EPSC": "EPS de Complément",
         "FR-E": "Français écrit",
         "FR-O": "Français oral",
-        "FR-L": "Français et littérature",
+        "FRLE": "Français et littérature écrit",
+        "FRLO": "Français et littérature oral",
         "LIT": "Littérature",
         "LITE": "Littérature en langue étrangère",
         "TPE": "Travaux personnels encadrés",
         "HG": "Histoire-géographie",
         "LV1": "Langue vivante 1",
         "LV2": "Langue vivante 2",
+        "LV3": "Langue vivante 3",
         "PHI": "Philosophie",
         "SCI": "Sciences",
         "ECO": "Economie approfondie",
         "SSP": "Sciences sociales et politiques",
+        "LAT": "Latin",
+        "DEC": "Droits et grands enjeux du monde contemporain",
+        "AP": "Arts plastiques",
+        "CA": "Cinéma-audiovisuel",
+        "HDA": "Histoire des arts",
+        "THE": "Théâtre",
+        "MUS": "Musique",
+        "DAN": "Danse",
+        "ADC": "Arts du cirque",
+        "GREC": "Grec ancien",
+        "SES": "Sciences économiques et sociales",
+        "EG": "Etude de gestion",
+        "ED": "Économie-droit",
+        "MO": "Management des organisations",
+        "GF": "Gestion et finance",
+        "IG": "Systèmes d'inforamtion et de gestion",
+        "RHC": "Ressources humaines et communication",
+        "MAR": "Mercatique (marketing)",
+        "AI": "Activités interdisciplinaires",
+        "SPC": "Sciences physiques et chimiques",
+        "STSS": "Sciences et techniques sanitaires et sociales",
+        "PT-C": "Projet technologique",
+        "PT-O": "Projet technologique oral final",
+        "BPH": "Biologie et physiopathologie humaines",
+        "ETT": "Enseignements technologiques transversaux",
+        "ETLV": "Enseignement technologique en LV1",
+        "ITEC": "Innovation technologique et éco-conception",
+        "SIN": "Systèmes d'information et numérique",
+        "EE": "Energies et environnement",
+        "AEC": "Architecture et construction",
+        "AMDAA": "Analyse méthodique en design et arts appliqués",
+        "PDAA": "Projet en design et arts appliqués",
+        "DAALV": "Design et arts appliqués en LV1",
+        "CBSVB": "Biotechnologies",
+        "CBSVP": "Sciences physiques et chimiques en laboratoire",
+        "ECE": "Evaluation des compétences expérimentales",
+        "PESS": "Projet en enseignement spécifique à la spécialité",
+        "EGH": "Économie et gestion hôtelière",
+        "STS": "Sciences et technologies des services",
+        "STC": "Sciences et technologies culinaires",
+        "STHRP": "Projet en STHR",
         "OPT1": "Option n°1",
         "OPT2": "Option n°2"
     },
+    "info": {
+        "BONUS": "Seuls les points supérieurs à la moyenne sont retenus et multipliés par le coefficient"
+    },
     "filieres": [
         {
-            "nom": "bac S",
-            "obl": [
-                "SVT",
-                "SI",
-                "EAT"
-            ],
-            "spe": [
-                "PC",
-                "MATH",
-                "INFO"
-            ],
+            "nom": "Bac S",
             "mat": [
                 {
                     "id": "FR-E",
                     "type": "écrit",
                     "coef": 2,
                     "an": "PREM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -50,6 +88,8 @@
                     "type": "oral",
                     "coef": 2,
                     "an": "PREM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -57,13 +97,18 @@
                     "type": "oral",
                     "coef": 2,
                     "an": "PREM",
-                    "bonus": true
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
                 },
                 {
                     "id": "PHI",
                     "type": "écrit",
                     "coef": 3,
                     "an": "TERM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -71,6 +116,8 @@
                     "type": "écrit",
                     "coef": 3,
                     "an": "TERM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -78,6 +125,8 @@
                     "type": "écrit et oral",
                     "coef": 3,
                     "an": "TERM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -85,6 +134,8 @@
                     "type": "écrit et oral",
                     "coef": 2,
                     "an": "TERM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -92,6 +143,9 @@
                     "type": "écrit",
                     "coef": 7,
                     "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 2,
                     "bonus": false
                 },
                 {
@@ -99,6 +153,9 @@
                     "type": "écrit et pratique",
                     "coef": 6,
                     "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 2,
                     "bonus": false
                 },
                 {
@@ -106,6 +163,9 @@
                     "type": "écrit et pratique",
                     "coef": 6,
                     "an": "TERM",
+                    "obl": true,
+                    "spe": true,
+                    "spebonus": 2,
                     "bonus": false
                 },
                 {
@@ -113,6 +173,9 @@
                     "type": "écrit et oral",
                     "coef": 6,
                     "an": "TERM",
+                    "obl": true,
+                    "spe": true,
+                    "spebonus": 2,
                     "bonus": false
                 },
                 {
@@ -120,6 +183,9 @@
                     "type": "écrit et oral",
                     "coef": 7,
                     "an": "TERM",
+                    "obl": true,
+                    "spe": true,
+                    "spebonus": 2,
                     "bonus": false
                 },
                 {
@@ -127,6 +193,9 @@
                     "type": "oral",
                     "coef": 0,
                     "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 2,
                     "bonus": false
                 },
                 {
@@ -134,6 +203,8 @@
                     "type": "contrôle continu",
                     "coef": 2,
                     "an": "TERM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -141,42 +212,48 @@
                     "type": "",
                     "coef": 2,
                     "an": "OPT",
-                    "bonus": true
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
                 },
                 {
                     "id": "OPT2",
                     "type": "",
                     "coef": 1,
                     "an": "OPT",
-                    "bonus": true
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
                 }
             ],
             "OPT": [
-                "Arts plastiques",
-                "Cinéma-audivisuel",
-                "Danse",
-                "EPS",
-                "Grec",
-                "Hippologie et Equitation",
-                "Histoire des arts",
-                "Langue des signes",
-                "Langue vivante 3",
                 "Latin",
+                "Grec",
+                "Langue vivante 3",
+                "Langue des signes française",
+                "Arts plastiques",
+                "Cinéma-audiovisuel",
+                "Danse",
+                "Histoire des arts",
+                "Théâtre",
+                "EPS",
                 "Musique",
-                "Pratiques sociales et culturelles",
-                "Théâtre"
+                "Hippologie et Equitation",
+                "Pratiques sociales et culturelles"
             ]
         },
         {
-            "nom": "bac ES",
-            "obl": [],
-            "spe": [],
+            "nom": "Bac ES",
             "mat": [
                 {
                     "id": "FR-E",
                     "type": "écrit",
                     "coef": 2,
                     "an": "PREM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -184,6 +261,17 @@
                     "type": "oral",
                     "coef": 2,
                     "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "SCI",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -191,13 +279,93 @@
                     "type": "oral",
                     "coef": 2,
                     "an": "PREM",
-                    "bonus": true
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
                 },
                 {
                     "id": "PHI",
                     "type": "écrit",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "HG",
+                    "type": "écrit",
+                    "coef": 5,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV1",
+                    "type": "écrit et oral",
                     "coef": 3,
                     "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV2",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "MATH",
+                    "type": "écrit",
+                    "coef": 5,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 2,
+                    "bonus": false
+                },
+                {
+                    "id": "SES",
+                    "type": "écrit",
+                    "coef": 7,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "ECO",
+                    "type": "écrit",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 2,
+                    "bonus": false
+                },
+                {
+                    "id": "SSP",
+                    "type": "écrit",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 2,
+                    "bonus": false
+                },
+                {
+                    "id": "EPS",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
                 },
                 {
@@ -205,70 +373,1269 @@
                     "type": "",
                     "coef": 2,
                     "an": "OPT",
-                    "bonus": true
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "OPT2",
+                    "type": "",
+                    "coef": 1,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
                 }
             ],
-            "OPT": []
+            "OPT": [
+                "Latin",
+                "Grec",
+                "Langue vivante 3",
+                "Langue des signes française",
+                "Arts plastiques",
+                "Cinéma-audiovisuel",
+                "Danse",
+                "Histoire des arts",
+                "Théâtre",
+                "EPS",
+                "Musique",
+                "Informatique et création numérique"
+            ]
         },
         {
-            "nom": "bac L",
-            "obl": [],
-            "spe": [],
+            "nom": "Bac L",
+            "mat": [
+                {
+                    "id": "FRLE",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "FRLO",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "SCI",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "TPE",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "LIT",
+                    "type": "écrit",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LITE",
+                    "type": "oral",
+                    "coef": 1,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PHI",
+                    "type": "écrit",
+                    "coef": 7,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "HG",
+                    "type": "écrit",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV1",
+                    "type": "écrit et oral",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 4,
+                    "bonus": false
+                },
+                {
+                    "id": "LV2",
+                    "type": "écrit et oral",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 4,
+                    "bonus": false
+                },
+                {
+                    "id": "MATH",
+                    "type": "écrit",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 4,
+                    "bonus": false
+                },
+                {
+                    "id": "LAT",
+                    "type": "écrit",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 4,
+                    "bonus": false
+                },
+                {
+                    "id": "GREC",
+                    "type": "écrit",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 4,
+                    "bonus": false
+                },
+                {
+                    "id": "LV3",
+                    "type": "oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 4,
+                    "bonus": false
+                },
+                {
+                    "id": "DEC",
+                    "type": "oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 4,
+                    "bonus": false
+                },
+                {
+                    "id": "AP",
+                    "type": "écrit et pratique",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 6,
+                    "bonus": false
+                },
+                {
+                    "id": "CA",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 6,
+                    "bonus": false
+                },
+                {
+                    "id": "MUS",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 6,
+                    "bonus": false
+                },
+                {
+                    "id": "THE",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 6,
+                    "bonus": false
+                },
+                {
+                    "id": "DAN",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 6,
+                    "bonus": false
+                },
+                {
+                    "id": "ADC",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 6,
+                    "bonus": false
+                },
+                {
+                    "id": "HDA",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 6,
+                    "bonus": false
+                },
+                {
+                    "id": "EPS",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "OPT1",
+                    "type": "",
+                    "coef": 2,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "OPT2",
+                    "type": "",
+                    "coef": 1,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                }
+            ],
+            "OPT": [
+                "Latin",
+                "Grec",
+                "Langue vivante 3",
+                "Langue des signes française",
+                "Arts plastiques",
+                "Cinéma-audiovisuel",
+                "Danse",
+                "Histoire des arts",
+                "Théâtre",
+                "EPS",
+                "Musique",
+                "Informatique et création numérique"
+            ]
+        },
+        {
+            "nom": "Bac STMG",
             "mat": [
                 {
                     "id": "FR-E",
                     "type": "écrit",
                     "coef": 2,
                     "an": "PREM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
+                },
+                {
+                    "id": "FR-O",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "EG",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PHI",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "HG",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV1",
+                    "type": "écrit et oral",
+                    "coef": 3,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV2",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "MATH",
+                    "type": "écrit",
+                    "coef": 3,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "ED",
+                    "type": "écrit",
+                    "coef": 5,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "MO",
+                    "type": "écrit",
+                    "coef": 5,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "GF",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 12,
+                    "bonus": false
+                },
+                {
+                    "id": "IG",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 12,
+                    "bonus": false
+                },
+                {
+                    "id": "RHC",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 12,
+                    "bonus": false
+                },
+                {
+                    "id": "MAR",
+                    "type": "écrit et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 12,
+                    "bonus": false
+                },
+                {
+                    "id": "EPS",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "OPT1",
+                    "type": "",
+                    "coef": 2,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "OPT2",
+                    "type": "",
+                    "coef": 1,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
                 }
             ],
-            "OPT": []
+            "OPT": [
+                "Langue des signes française",
+                "Arts plastiques",
+                "Cinéma-audiovisuel",
+                "Danse",
+                "Histoire des arts",
+                "Théâtre",
+                "EPS",
+                "Musique"
+            ]
         },
         {
-            "nom": "bac STMG",
-            "obl": [],
-            "spe": [],
+            "nom": "Bac ST2S",
             "mat": [
                 {
                     "id": "FR-E",
                     "type": "écrit",
                     "coef": 2,
                     "an": "PREM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
+                },
+                {
+                    "id": "FR-O",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "AI",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "PHI",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "HG",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV1",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV2",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "MATH",
+                    "type": "écrit",
+                    "coef": 3,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "SPC",
+                    "type": "écrit",
+                    "coef": 3,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "STSS",
+                    "type": "écrit",
+                    "coef": 7,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PT-C",
+                    "type": "contrôle continu",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PT-O",
+                    "type": "oral",
+                    "coef": 3,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "BPH",
+                    "type": "écrit",
+                    "coef": 7,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "EPS",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "OPT1",
+                    "type": "",
+                    "coef": 2,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "OPT2",
+                    "type": "",
+                    "coef": 1,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
                 }
             ],
-            "OPT": []
+            "OPT": [
+                "Langue des signes française",
+                "Arts plastiques",
+                "Cinéma-audiovisuel",
+                "Danse",
+                "Histoire des arts",
+                "Théâtre",
+                "EPS",
+                "Musique"
+            ]
         },
         {
-            "nom": "bac ST2D",
-            "obl": [],
-            "spe": [],
+            "nom": "Bac STI2D",
             "mat": [
                 {
                     "id": "FR-E",
                     "type": "écrit",
                     "coef": 2,
                     "an": "PREM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
+                },
+                {
+                    "id": "FR-O",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "HG",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PHI",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV1",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV2",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "MATH",
+                    "type": "écrit",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PC",
+                    "type": "écrit",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "ETT",
+                    "type": "écrit",
+                    "coef": 8,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "ETLV",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "ITEC",
+                    "type": "contrôle continu et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 12,
+                    "bonus": false
+                },
+                {
+                    "id": "SIN",
+                    "type": "contrôle continu et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 12,
+                    "bonus": false
+                },
+                {
+                    "id": "EE",
+                    "type": "contrôle continu et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 12,
+                    "bonus": false
+                },
+                {
+                    "id": "AEC",
+                    "type": "contrôle continu et oral",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 12,
+                    "bonus": false
+                },
+                {
+                    "id": "EPS",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "OPT1",
+                    "type": "",
+                    "coef": 2,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "OPT2",
+                    "type": "",
+                    "coef": 1,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
                 }
             ],
-            "OPT": []
+            "OPT": [
+                "Langue des signes française",
+                "Arts plastiques",
+                "Cinéma-audiovisuel",
+                "Danse",
+                "Histoire des arts",
+                "Théâtre",
+                "EPS",
+                "Musique"
+            ]
         },
         {
-            "nom": "bac ST2S",
-            "obl": [],
-            "spe": [],
+            "nom": "Bac STD2A",
             "mat": [
                 {
                     "id": "FR-E",
                     "type": "écrit",
                     "coef": 2,
                     "an": "PREM",
+                    "obl": false,
+                    "spe": false,
                     "bonus": false
+                },
+                {
+                    "id": "FR-O",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "HG",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PHI",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV1",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV2",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "MATH",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PC",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "AMDAA",
+                    "type": "écrit",
+                    "coef": 6,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PDAA",
+                    "type": "écrit",
+                    "coef": 16,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "DAALV",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "EPS",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "OPT1",
+                    "type": "",
+                    "coef": 2,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "OPT2",
+                    "type": "",
+                    "coef": 1,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
                 }
             ],
-            "OPT": []
+            "OPT": [
+                "Langue des signes française",
+                "Arts plastiques",
+                "Cinéma-audiovisuel",
+                "Danse",
+                "Histoire des arts",
+                "Théâtre",
+                "EPS",
+                "Musique"
+            ]
+        },
+        {
+            "nom": "Bac STL",
+            "mat": [
+                {
+                    "id": "FR-E",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "FR-O",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "HG",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PHI",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV1",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV2",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "MATH",
+                    "type": "écrit",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PC",
+                    "type": "écrit",
+                    "coef": 4,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "CBSVB",
+                    "type": "écrit",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 8,
+                    "bonus": false
+                },
+                {
+                    "id": "CBSVP",
+                    "type": "écrit",
+                    "coef": 0,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": true,
+                    "spebonus": 8,
+                    "bonus": false
+                },
+                {
+                    "id": "ECE",
+                    "type": "pratique",
+                    "coef": 6,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PESS",
+                    "type": "contrôle continu et oral",
+                    "coef": 6,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "ETLV",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "EPS",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "OPT1",
+                    "type": "",
+                    "coef": 2,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "OPT2",
+                    "type": "",
+                    "coef": 1,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                }
+            ],
+            "OPT": [
+                "Langue des signes française",
+                "Arts plastiques",
+                "Cinéma-audiovisuel",
+                "Danse",
+                "Histoire des arts",
+                "Théâtre",
+                "EPS",
+                "Musique"
+            ]
+        },
+        {
+            "nom": "Bac STHR",
+            "mat": [
+                {
+                    "id": "FR-E",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "FR-O",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "PREM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "HG",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "PHI",
+                    "type": "écrit",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV1",
+                    "type": "écrit et oral",
+                    "coef": 3,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "LV2",
+                    "type": "écrit et oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "MATH",
+                    "type": "écrit",
+                    "coef": 3,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "EGH",
+                    "type": "écrit",
+                    "coef": 7,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "STS",
+                    "type": "écrit et pratique",
+                    "coef": 7,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "STC",
+                    "type": "écrit et pratique",
+                    "coef": 7,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "STHRP",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "ETLV",
+                    "type": "oral",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "EPS",
+                    "type": "contrôle continu",
+                    "coef": 2,
+                    "an": "TERM",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": false
+                },
+                {
+                    "id": "OPT1",
+                    "type": "",
+                    "coef": 2,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                },
+                {
+                    "id": "OPT2",
+                    "type": "",
+                    "coef": 1,
+                    "an": "OPT",
+                    "obl": false,
+                    "spe": false,
+                    "bonus": true,
+                    "info": "BONUS"
+                }
+            ],
+            "OPT": [
+                "Langue des signes française",
+                "Langue vivante étrangère ou régionale",
+                "Arts plastiques",
+                "Cinéma-audiovisuel",
+                "Danse",
+                "Histoire des arts",
+                "Théâtre",
+                "EPS",
+                "Musique"
+            ]
         }
     ]
 }

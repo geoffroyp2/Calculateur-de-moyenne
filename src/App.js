@@ -45,7 +45,7 @@ class Calculateur extends Component {
     //Création du menu déroulant
     let listeDeFilieres = [];
     for (let i = "0"; i <= "5"; i++)
-      listeDeFilieres.push(<option key={`F${i}`} id={`F${i}`}> {data[i].fil} </option>);
+      listeDeFilieres.push(<option key={`F${i}`} id={`F${i}`}> {data.filieres[i].nom} </option>);
 
     return (
       <>
@@ -72,7 +72,7 @@ class Obligatoire extends Component {
     super(props);
     this.state = {
       // null si data[filiere].obl est vide, sinon la valeur par défaut est la première
-      obl: data[this.props.filiere].obl[0] || null
+      obl: data.filieres[this.props.filiere].obl[0] || null
     };
   }
 
@@ -87,12 +87,12 @@ class Obligatoire extends Component {
 
   render() {
     //Génération du menu déroulant
-    let content = data[this.props.filiere];
+    let content = data.filieres[this.props.filiere];
     let ensObligatoire;
     if (content.obl.length > 0) {
       let ensOblArr = [];
       for (let i of content.obl)
-        ensOblArr.push(<option key={`O${i}`} id={`O${i}`}> {data.mat[i]} </option>);
+        ensOblArr.push(<option key={`O${i}`} id={`O${i}`}> {data.matieres[i]} </option>);
       ensObligatoire =
         <div>
           Enseignement obligatoire :&nbsp;
@@ -120,7 +120,7 @@ class Specialite extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      spe: data[this.props.filiere].spe[0] || null
+      spe: data.filieres[this.props.filiere].spe[0] || null
     };
   };
 
@@ -133,15 +133,15 @@ class Specialite extends Component {
   }
 
   render() {
-    let content = data[this.props.filiere];
+    let content = data.filieres[this.props.filiere];
     let ensSpecialise;
     if (content.spe.length > 0) {
       let ensSpeArr = [];
       for (let i of content.spe)
-        ensSpeArr.push(<option key={`O${i}`} id={`O${i}`}> {data.mat[i]} </option>);
+        ensSpeArr.push(<option key={`O${i}`} id={`O${i}`}> {data.matieres[i]} </option>);
       // pour la filière S : si il y a un enseignement obligatoire, alors il peut être choisi en spécialité
       if (this.props.obl !== undefined)
-        ensSpeArr.push(<option key={`O${this.props.obl}`} id={`O${this.props.obl}`}> {data.mat[this.props.obl]} </option>);
+        ensSpeArr.push(<option key={`O${this.props.obl}`} id={`O${this.props.obl}`}> {data.matieres[this.props.obl]} </option>);
       ensSpecialise =
         <div>
           Enseignement de spécialité :&nbsp;
@@ -181,7 +181,7 @@ class Matieres extends Component {
   }
 
   render() {
-    let content = data[this.props.filiere];
+    let content = data.filieres[this.props.filiere];
     let obl = this.props.obl, spe = this.props.spe;
 
     // Rendu des séparateurs entre matières de première, terminale et optionnelles
@@ -212,13 +212,13 @@ class Matieres extends Component {
         //Revoir la mise en page :)
         texteMatiere =
           <>
-            {data.mat[i.id]}
+            {data.matieres[i.id]}
             <br />{i.type}
           </>;
       } else {
         //les menus déroulants des matières optionnelles
         let matList = [];
-        for (let j of data.mat[i.id])
+        for (let j of data.matieres[i.id])
           matList.push(<option key={`OP${j + count}`}> {j} </option>);
         texteMatiere = <select>{matList}</select>;
       }

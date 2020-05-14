@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.font-weight-normal-plus {
+  font-weight: 500!important;
+}
+
+.eps-section {
+  padding-top: 5px;
+}
+
+.eps-section label {
+  font-style: italic;
+}
+
+@media (max-width: 576px) {
+  .matiere {
+    max-width: 180px;
+  }
+}
+
+.coefficient {
+  width: 10%;
+}

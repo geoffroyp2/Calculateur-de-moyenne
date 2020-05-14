@@ -81,7 +81,7 @@ const Calculateur = () => {
 
                     return mat.obl && (obligatoire !== mat.id) ? //ne compter que la matière obligatoire choisie
                         acc :
-                        acc + (coef + (mat.id === specialite ? mat.spebonus : 0)) * (notes[mat.id] || 0); // appliquer les coef bonus
+                        acc + coef * (notes[mat.id] || 0); // appliquer les coef bonus
                 }
             }, 0)
             /
@@ -96,7 +96,7 @@ const Calculateur = () => {
 
                 return mat.bonus || (mat.obl && obligatoire !== mat.id) ? // ni les obligatoires non-choisies ni les bonus
                     acc :
-                    acc + coef + (mat.id === specialite ? mat.spebonus : 0); // coef + coef de spé si nécessaire
+                    acc + coef; // coef + coef de spé si nécessaire
             }, 0)
         ).toFixed(2);
 

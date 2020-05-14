@@ -285,7 +285,7 @@ const Calculateur = () => {
                 <div className={`alert ${avg > 10 ? "alert-success" : "alert-danger"} p-2`}>
                     <span className="pr-3"> Moyenne :</span>
                     <span>{avg} / 20</span>
-                    <div>Plus d'infos <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" rel="noopener noreferrer" target="_blank">ici</a></div>
+                    <div>Plus d'infos <a href="https://syndicat-unl.fr/" rel="noopener noreferrer" target="_blank">ici</a></div>
                 </div>
             </div>
         </div >

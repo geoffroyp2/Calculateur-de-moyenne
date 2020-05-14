@@ -79,9 +79,17 @@ const Calculateur = () => {
             }, 0)
             /
             filiere.mat.reduce((acc, mat) => {
+                let coef = mat.coef;
+                if (mat.id === specialite) { // coef + coef de spé si nécessaire
+                    coef += mat.spebonus;
+                }
+                if (mat.id === "EPS" && EPS) {
+                    coef += 2;
+                }
+
                 return mat.bonus || (mat.obl && obligatoire !== mat.id) ? // ni les obligatoires non-choisies ni les bonus
                     acc :
-                    acc + mat.coef + (mat.id === specialite ? mat.spebonus : 0); // coef + coef de spé si nécessaire
+                    acc + coef + (mat.id === specialite ? mat.spebonus : 0); // coef + coef de spé si nécessaire
             }, 0)
         ).toFixed(2);
 
@@ -100,7 +108,8 @@ const Calculateur = () => {
 
     const onChangeEPS = useCallback((evt) => {
         changeEPS(evt.target.checked);
-    }, []);
+        calculateMoyenne();
+    }, [calculateMoyenne]);
 
     const onChangeOption = useCallback((idx) => {
         // afin d'eviter que la personne selectionne deux fois la meme options.

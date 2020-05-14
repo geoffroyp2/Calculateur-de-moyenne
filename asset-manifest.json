@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Calculateur-de-moyenne/static/css/main.33e5d89c.chunk.css",
-    "main.js": "/Calculateur-de-moyenne/static/js/main.918cdc42.chunk.js",
-    "main.js.map": "/Calculateur-de-moyenne/static/js/main.918cdc42.chunk.js.map",
+    "main.js": "/Calculateur-de-moyenne/static/js/main.712bbaf8.chunk.js",
+    "main.js.map": "/Calculateur-de-moyenne/static/js/main.712bbaf8.chunk.js.map",
     "runtime-main.js": "/Calculateur-de-moyenne/static/js/runtime-main.77e42ba2.js",
     "runtime-main.js.map": "/Calculateur-de-moyenne/static/js/runtime-main.77e42ba2.js.map",
     "static/js/2.6d4c2639.chunk.js": "/Calculateur-de-moyenne/static/js/2.6d4c2639.chunk.js",
     "static/js/2.6d4c2639.chunk.js.map": "/Calculateur-de-moyenne/static/js/2.6d4c2639.chunk.js.map",
     "index.html": "/Calculateur-de-moyenne/index.html",
-    "precache-manifest.8b163305c34708faf08f1b01bb66cb39.js": "/Calculateur-de-moyenne/precache-manifest.8b163305c34708faf08f1b01bb66cb39.js",
+    "precache-manifest.03ddcbd56fb62a02a123e77de98b028e.js": "/Calculateur-de-moyenne/precache-manifest.03ddcbd56fb62a02a123e77de98b028e.js",
     "service-worker.js": "/Calculateur-de-moyenne/service-worker.js",
     "static/css/main.33e5d89c.chunk.css.map": "/Calculateur-de-moyenne/static/css/main.33e5d89c.chunk.css.map",
     "static/js/2.6d4c2639.chunk.js.LICENSE.txt": "/Calculateur-de-moyenne/static/js/2.6d4c2639.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.77e42ba2.js",
     "static/js/2.6d4c2639.chunk.js",
     "static/css/main.33e5d89c.chunk.css",
-    "static/js/main.918cdc42.chunk.js"
+    "static/js/main.712bbaf8.chunk.js"
   ]
 }

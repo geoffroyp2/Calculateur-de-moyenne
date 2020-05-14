@@ -64,17 +64,24 @@ const Calculateur = () => {
     const calculateMoyenne = useCallback(() => {
         const moyenne = (
             filiere.mat.reduce((acc, mat) => {
+                let coef = mat.coef;
                 if (mat.bonus) { // Pour les matières bonus (TPE & Options)
-                    let coef = mat.coef;
                     if (mat.id === "OPT1" && (option1 === "Latin" || option1 === "Grec")) { // si Latin ou Grec le coef est de 3.
                         coef += 1;
                     }
 
                     return (notes[mat.id] || 0) <= 10 ? acc : acc + coef * (notes[mat.id] - 10); //Seulement les notes au-dessus de 10
                 } else {
+                    if (mat.id === specialite) {
+                        coef += mat.spebonus;
+                    }
+                    if (mat.id === "EPS" && EPS) {
+                        coef += 2;
+                    }
+
                     return mat.obl && (obligatoire !== mat.id) ? //ne compter que la matière obligatoire choisie
                         acc :
-                        acc + (mat.coef + (mat.id === specialite ? mat.spebonus : 0)) * (notes[mat.id] || 0); // appliquer les coef bonus
+                        acc + (coef + (mat.id === specialite ? mat.spebonus : 0)) * (notes[mat.id] || 0); // appliquer les coef bonus
                 }
             }, 0)
             /
@@ -94,7 +101,7 @@ const Calculateur = () => {
         ).toFixed(2);
 
         changeAvg(moyenne);
-    }, [filiere.mat, notes, obligatoire, option1, specialite]);
+    }, [filiere.mat, notes, obligatoire, option1, specialite, EPS]);
 
     const onChangeObligatoire = useCallback((evt) => {
         changeObligatoire(Object.entries(matieres).find(i => i[1] === evt.target.value)[0]); //Il y a surement plus simple ;D

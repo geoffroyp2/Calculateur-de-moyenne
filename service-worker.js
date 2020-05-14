@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Calculateur-de-moyenne/precache-manifest.03ddcbd56fb62a02a123e77de98b028e.js"
+  "/Calculateur-de-moyenne/precache-manifest.8b163305c34708faf08f1b01bb66cb39.js"
 );
 
 self.addEventListener('message', (event) => {

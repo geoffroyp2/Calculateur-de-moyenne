@@ -125,23 +125,21 @@ const Calculateur = () => {
     }, [notes, filiere.mat, specialite]);
 
     return (
-        <div>
-            <h1 className={`text-center`}>Calculateur de moyenne</h1>
-            <div className={`container border border-primary rounded shadow-lg p-3 m-3`}>
-                <div className={``}> {/* Je sépare le label du select custom pour pouvoir gérer la mise en page*/}
-                    <label className={`pr-3`}>Filière :</label>
+        <div className="container">
+            <h1 className="text-center">Calculateur de moyenne</h1>
+            <div className="container border border-primary rounded shadow-lg p-3 m-3">
+                <div> {/* Je sépare le label du select custom pour pouvoir gérer la mise en page*/}
+                    <label className="pr-3">Filière :</label>
                     <Select
-                        className="" //class name du Select
                         onChange={onChangeFiliere}
                         value={filiere.nom}
                         values={filieres.map(i => i.nom)}
                     />
                 </div>
                 {obligatoire ?
-                    <div className={``}>
-                        <label className={`pr-3`}>Enseignement obligatoire :</label>
+                    <div>
+                        <label className="pr-3">Enseignement obligatoire :</label>
                         <Select
-                            className=""
                             onChange={onChangeObligatoire}
                             value={matieres[obligatoire]}
                             values={filiere.mat.filter(i => i.obl).map(i => matieres[i.id])}
@@ -151,10 +149,9 @@ const Calculateur = () => {
                     null
                 }
                 {specialite ?
-                    <div className={``}>
-                        <label className={`pr-3`}>Enseignement de spécialité : </label>
+                    <div>
+                        <label className="pr-3">Enseignement de spécialité : </label>
                         <Select
-                            className=""
                             onChange={onChangeSpecialite}
                             value={matieres[specialite]}
                             values={filiere.mat.filter(i => (i.spe && !i.obl) || (i.id === obligatoire)).map(i => matieres[i.id])}
@@ -165,21 +162,21 @@ const Calculateur = () => {
                 }
             </div>
 
-            <div className={`container border border-primary rounded shadow-lg p-3 m-3`}>
+            <div className="container border border-primary rounded shadow-lg p-3 m-3">
                 <form onSubmit={onSubmit}>
-                    <Table className={`table-bordered table-striped`} size={`sm`}>
+                    <Table className="table-bordered table-striped" size={`sm`}>
                         {[...Array(3)].map((elem, idx) =>
                             <React.Fragment key={`tableau${idx}`}>
                                 <thead>
                                     <tr>
-                                        <th colSpan="3" className={`h4 font-weight-bold pb-2 pt-2`}>
+                                        <th colSpan="3" className="h4 font-weight-bold pb-2 pt-2">
                                             {["Epreuves anticipées", "Epreuves Terminales", "Options"][idx]}
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th className={`h5 font-weight-normal`}>Matière</th>
-                                        <th className={`h5 font-weight-normal`}>Coefficient</th>
-                                        <th className={`h5 font-weight-normal`}>Note</th>
+                                        <th className="h5 font-weight-normal">Matière</th>
+                                        <th className="h5 font-weight-normal">Coefficient</th>
+                                        <th className="h5 font-weight-normal">Note</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -189,14 +186,14 @@ const Calculateur = () => {
                                         if (coef !== 0 && (!mat.obl || (mat.obl && obligatoire === mat.id))) {
                                             return (
                                                 <tr key={mat.id}>
-                                                    <td className={`pb-0 pt-1`}>
+                                                    <td className="pb-0 pt-1">
                                                         {filiere.nom === "Bac STL" && mat.spe ? //Petit cas relou
-                                                            <span className={`float-left pl-1 pr-1`}>{"Chimie, biochimie, sciences du vivant et " + matieres[mat.id]}</span>
+                                                            <span className="float-left pl-1 pr-1">{"Chimie, biochimie, sciences du vivant et " + matieres[mat.id]}</span>
                                                             :
-                                                            <span className={`float-left pl-1 pr-1`}>{matieres[mat.id]}</span>
+                                                            <span className="float-left pl-1 pr-1">{matieres[mat.id]}</span>
                                                         }
                                                         {idx < 2 ?
-                                                            <span className={`float-right text-muted pl-1 pr-2`}>
+                                                            <span className="float-right text-muted pl-1 pr-2">
                                                                 {mat.info ?
                                                                     <OverlayTrigger
                                                                         placement={`left`}
@@ -209,7 +206,7 @@ const Calculateur = () => {
                                                                 {mat.type}
                                                             </span>
                                                             :
-                                                            <span className={`pl-1`}>
+                                                            <span className="pl-1">
                                                                 <Select
                                                                     className="options"
                                                                     onChange={onChangeOption(+mat.id[3])}
@@ -217,12 +214,12 @@ const Calculateur = () => {
                                                                     values={filiere.OPT}
                                                                 />
                                                                 {mat.info ?
-                                                                    <span className={`float-right text-muted pl-1 pr-2`}>
+                                                                    <span className="float-right text-muted pl-1 pr-2">
                                                                         <OverlayTrigger
-                                                                            placement={`left`}
+                                                                            placement="left"
                                                                             overlay={<Tooltip id={`${mat.id}info`}>{info[mat.info]}</Tooltip>}
                                                                         >
-                                                                            <BsInfoCircle className={`pr-1`} />
+                                                                            <BsInfoCircle className="pr-1" />
                                                                         </OverlayTrigger>
                                                                     </span>
                                                                     : null
@@ -230,11 +227,11 @@ const Calculateur = () => {
                                                             </span>
                                                         }
                                                         {mat.id === 'EPS' ?
-                                                            <div className={`pt-2 pl-2`}><p />
+                                                            <div className="pt-2 pl-2"><p />
                                                                 <Form.Check
                                                                     type="switch"
-                                                                    id={`EPS-switch`}
-                                                                    label={`EPS de complément`}
+                                                                    id="EPS-switch"
+                                                                    label="EPS de complément"
                                                                     onChange={onChangeEPS}
                                                                     checked={EPS}
                                                                 /></div>
@@ -242,10 +239,10 @@ const Calculateur = () => {
                                                             null
                                                         }
                                                     </td>
-                                                    <td className={`pb-0 pt-1`}>
+                                                    <td className="pb-0 pt-1">
                                                         {coef}
                                                     </td>
-                                                    <td className={`pb-0 pt-1`}>
+                                                    <td className="pb-0 pt-1">
                                                         <input type="number" min="0" max="20" onChange={(e) => {
                                                             changeNotes({ ...notes, [mat.id]: e.target.value });
                                                             calculateMoyenne();
@@ -259,13 +256,13 @@ const Calculateur = () => {
                             </React.Fragment >
                         )}
                     </Table>
-                    <div className={`pl-3 pb-3`}>
-                        <button type="submit" onClick={onSubmit} className={`btn-primary btn-sm shadow`}>Calculer</button>
+                    <div className="pl-3 pb-3">
+                        <button type="submit" onClick={onSubmit} className="btn-primary btn-sm shadow">Calculer</button>
                     </div>
                 </form>
 
-                <div className={`alert ${avg > 10 ? `alert-success` : `alert-danger`} p-2`}>
-                    <span className={`pr-3`}> Moyenne :</span>
+                <div className={`alert ${avg > 10 ? "alert-success" : "alert-danger"} p-2`}>
+                    <span className="pr-3"> Moyenne :</span>
                     <span>{avg} / 20</span>
                     <div>Plus d'infos <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" rel="noopener noreferrer" target="_blank">ici</a></div>
                 </div>
